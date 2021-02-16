@@ -44,7 +44,8 @@ namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding
 			string contextNamespace,
 			string modelNamespace,
 			bool useDataAnnotations,
-			bool suppressConnectionStringWarning)
+			bool suppressConnectionStringWarning,
+			bool suppressOnConfiguring)
 		{
 			Ensure.Parameter.IsNotNullNorEmptyNorWhiteSpace(
 				contextName,
@@ -60,7 +61,8 @@ namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding
 				contextNamespace,
 				modelNamespace,
 				useDataAnnotations,
-				suppressConnectionStringWarning);
+				suppressConnectionStringWarning,
+				suppressOnConfiguring);
 			var sb = new StringBuilder();
 
 			AddUsings(sb, modelNamespace);

@@ -9,8 +9,8 @@ namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding
 {
 	public class CustomEntityTypeGenerator : CSharpEntityTypeGenerator
 	{
-		public CustomEntityTypeGenerator(ICSharpHelper cSharpHelper)
-			: base(cSharpHelper)
+		public CustomEntityTypeGenerator(IAnnotationCodeGenerator annotationCodeGenerator, ICSharpHelper cSharpHelper)
+			: base(annotationCodeGenerator, cSharpHelper)
 		{
 		}
 
