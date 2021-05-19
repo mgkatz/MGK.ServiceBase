@@ -8,3 +8,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "<Pending>", Scope = "type", Target = "~T:MGK.ServiceBase.DAL.Infrastructure.Scaffolding.CustomModelGenerator")]
 [assembly: SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "<Pending>", Scope = "type", Target = "~T:MGK.ServiceBase.DAL.Infrastructure.Scaffolding.CustomEntityTypeGenerator")]
 [assembly: SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "<Pending>", Scope = "type", Target = "~T:MGK.ServiceBase.DAL.Infrastructure.Scaffolding.CustomDbContextGenerator")]
+[assembly: SuppressMessage("Usage", "EF1001:Internal EF Core API usage.", Justification = "<Pending>", Scope = "member", Target = "~M:MGK.ServiceBase.DAL.Infrastructure.Scaffolding.CustomDesignTimeServices.ConfigureDesignTimeServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)")]

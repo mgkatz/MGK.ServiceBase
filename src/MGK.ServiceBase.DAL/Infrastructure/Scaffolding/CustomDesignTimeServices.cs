@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Scaffolding;
 using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding
 {

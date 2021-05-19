@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ErrorAliasNotExist" xml:space="preserve">
-    <value>The Alias was not provided.</value>
-  </data>
   <data name="ErrorApplicationBrake" xml:space="preserve">
     <value>Program terminated unexpectedly!</value>
   </data>
@@ -129,17 +126,8 @@
   <data name="ErrorContextPathNotDefined" xml:space="preserve">
     <value>The path that defines the context of the API is not defined.</value>
   </data>
-  <data name="ErrorDatabaseConfigurationNotAvailable" xml:space="preserve">
-    <value>The database configuration for '{0}' is not available.</value>
-  </data>
-  <data name="ErrorDatabaseNameNotExist" xml:space="preserve">
-    <value>The provided database name does not exist.</value>
-  </data>
   <data name="ErrorInternalServerError" xml:space="preserve">
     <value>Internal Server Error</value>
-  </data>
-  <data name="ErrorRequestContextNull" xml:space="preserve">
-    <value>The request context cannot be null.</value>
   </data>
   <data name="ErrorServiceValidation" xml:space="preserve">
     <value>Service Validation failed</value>

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MGK.ServiceBase.SeedWork;
+using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

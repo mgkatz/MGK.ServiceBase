@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Authors>Matías Gabriel Katz</Authors>
+    <Description>Base package for Services.</Description>
+    <Copyright>Matías Gabriel Katz (c) 2021</Copyright>
+    <Version>1.0.0</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/mgkatz/MGK.ServiceBase</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mgkatz/MGK.ServiceBase</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MGK.ServiceBase.IWEManager\MGK.ServiceBase.IWEManager.csproj" />
+  </ItemGroup>
+
+</Project>

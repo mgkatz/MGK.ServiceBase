@@ -1,5 +1,6 @@
 ﻿using MediatR;
-using MGK.ServiceBase.SeedWork;
+using MGK.ServiceBase.Configuration.SeedWork;
+using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,7 +19,7 @@ namespace MGK.ServiceBase.Registering.Service
 		public virtual void RegisterServices(IServiceCollection services, IConfiguration configuration)
 		{
 			var serviceProvider = services.BuildServiceProvider();
-			var serviceParameters = serviceProvider.GetService<IServiceParameters>();
+			var serviceParameters = serviceProvider.GetService<IMicroServiceParameters>();
 
 			// Scan assemblies and add handlers, preprocessors, and postprocessors implementations to the container.
 			services.AddMediatR(serviceParameters.ApiStartup.Assembly);

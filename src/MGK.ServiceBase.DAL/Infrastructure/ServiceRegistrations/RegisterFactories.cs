@@ -1,6 +1,6 @@
-﻿using MGK.ServiceBase.SeedWork;
-using MGK.ServiceBase.DAL.Infrastructure.Factories;
+﻿using MGK.ServiceBase.DAL.Infrastructure.Factories;
 using MGK.ServiceBase.DAL.SeedWork;
+using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -61,15 +61,6 @@ namespace BaseResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Alias was not provided..
-        /// </summary>
-        public static string ErrorAliasNotExist {
-            get {
-                return ResourceManager.GetString("ErrorAliasNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Program terminated unexpectedly!.
         /// </summary>
         public static string ErrorApplicationBrake {
@@ -97,38 +88,11 @@ namespace BaseResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The database configuration for &apos;{0}&apos; is not available..
-        /// </summary>
-        public static string ErrorDatabaseConfigurationNotAvailable {
-            get {
-                return ResourceManager.GetString("ErrorDatabaseConfigurationNotAvailable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The provided database name does not exist..
-        /// </summary>
-        public static string ErrorDatabaseNameNotExist {
-            get {
-                return ResourceManager.GetString("ErrorDatabaseNameNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Internal Server Error.
         /// </summary>
         public static string ErrorInternalServerError {
             get {
                 return ResourceManager.GetString("ErrorInternalServerError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The request context cannot be null..
-        /// </summary>
-        public static string ErrorRequestContextNull {
-            get {
-                return ResourceManager.GetString("ErrorRequestContextNull", resourceCulture);
             }
         }
         

@@ -1,7 +1,7 @@
-﻿using MGK.ServiceBase.DAL.SeedWork;
+﻿using MGK.ServiceBase.Configuration.SeedWork;
+using MGK.ServiceBase.DAL.SeedWork;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using MGK.ServiceBase.SeedWork;
 
 namespace MGK.ServiceBase.DAL.Infrastructure.Factories
 {

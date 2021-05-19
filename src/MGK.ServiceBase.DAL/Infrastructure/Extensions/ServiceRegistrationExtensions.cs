@@ -1,14 +1,13 @@
-﻿using MGK.ServiceBase.DAL.Infrastructure.Factories;
-using MGK.ServiceBase.Infrastructure.Exceptions;
-using MGK.ServiceBase.Infrastructure.Extensions;
-using MGK.ServiceBase.SeedWork;
-using MGK.Extensions;
+﻿using MGK.Extensions;
+using MGK.ServiceBase.Configuration.SeedWork;
+using MGK.ServiceBase.DAL.Infrastructure.Factories;
+using MGK.ServiceBase.Services.Infrastructure.Extensions;
+using MGK.ServiceBase.Services.Infrastructure.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace MGK.ServiceBase.DAL.Infrastructure.Extensions
 {

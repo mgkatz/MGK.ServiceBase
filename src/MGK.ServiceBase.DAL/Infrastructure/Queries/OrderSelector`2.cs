@@ -1,4 +1,4 @@
-﻿using MGK.ServiceBase.Infrastructure.Enums;
+﻿using MGK.ServiceBase.DAL.Infrastructure.Enums;
 using MGK.ServiceBase.DAL.SeedWork;
 using System;
 using System.Linq.Expressions;

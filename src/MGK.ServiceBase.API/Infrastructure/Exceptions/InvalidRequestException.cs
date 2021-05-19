@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MGK.ServiceBase.IWEManager.Infrastructure.Exceptions;
+using System;
 using System.Runtime.Serialization;
 
 namespace MGK.ServiceBase.Infrastructure.Exceptions
@@ -12,7 +13,7 @@ namespace MGK.ServiceBase.Infrastructure.Exceptions
         }
 
         /// <summary>
-        /// Exception for request not valid
+        /// Exception for request not valid.
         /// </summary>
         /// <param name="message">Message to show in response</param>
         /// <param name="details">Details to show in response</param>
