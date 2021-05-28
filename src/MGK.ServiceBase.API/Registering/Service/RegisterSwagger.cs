@@ -1,4 +1,5 @@
-﻿using MGK.ServiceBase.Configuration.SeedWork;
+﻿using MGK.ServiceBase.Configuration.Constants;
+using MGK.ServiceBase.Configuration.SeedWork;
 using MGK.ServiceBase.Constants;
 using MGK.ServiceBase.Infrastructure.Filters;
 using MGK.ServiceBase.Services.Infrastructure.Exceptions;

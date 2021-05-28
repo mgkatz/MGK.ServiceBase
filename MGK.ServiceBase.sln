@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGK.ServiceBase.DAL", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGK.ServiceBase.Services", "src\MGK.ServiceBase.Services\MGK.ServiceBase.Services.csproj", "{FCB300ED-5DE0-48F3-90FC-17308624CA26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGK.ServiceBase.IWEManager", "src\MGK.ServiceBase.IWEManager\MGK.ServiceBase.IWEManager.csproj", "{E662A7A7-265F-491E-920A-B8CD48E29C55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGK.ServiceBase.IWEManager", "src\MGK.ServiceBase.IWEManager\MGK.ServiceBase.IWEManager.csproj", "{E662A7A7-265F-491E-920A-B8CD48E29C55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGK.ServiceBase.Configuration", "src\MGK.ServiceBase.Configuration\MGK.ServiceBase.Configuration.csproj", "{A8CD8412-6D03-4269-8F42-D50B7FA4EC41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGK.ServiceBase.Configuration", "src\MGK.ServiceBase.Configuration\MGK.ServiceBase.Configuration.csproj", "{A8CD8412-6D03-4269-8F42-D50B7FA4EC41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

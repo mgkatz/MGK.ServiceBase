@@ -17,7 +17,9 @@ namespace MGK.ServiceBase.Registering.App
 
             if (serviceParameters.ContextPath.IsNullOrEmptyOrWhiteSpace())
             {
-                throw new ApplicationValidationException(BaseResources.MessagesResources.ErrorInternalServerError, BaseResources.MessagesResources.ErrorContextPathNotDefined);
+                throw new ApplicationValidationException(
+                    IWEResources.MessagesResources.ErrorInternalServerError,
+                    BaseResources.MessagesResources.ErrorContextPathNotDefined);
             }
 
             const string swagger = "swagger";

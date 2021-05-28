@@ -4,7 +4,7 @@ using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MGK.ServiceBase.DAL.Infrastructure.ServiceRegistrations
+namespace MGK.ServiceBase.DAL.Infrastructure.Registering.Service
 {
     public class RegisterFactories : IServiceRegistration
     {

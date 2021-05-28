@@ -88,15 +88,6 @@ namespace BaseResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Internal Server Error.
-        /// </summary>
-        public static string ErrorInternalServerError {
-            get {
-                return ResourceManager.GetString("ErrorInternalServerError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Service Validation failed.
         /// </summary>
         public static string ErrorServiceValidation {
@@ -133,20 +124,83 @@ namespace BaseResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Argument Exception.
-        /// </summary>
-        public static string ErrorWithArgument {
-            get {
-                return ResourceManager.GetString("ErrorWithArgument", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Conflict Business Validation.
         /// </summary>
         public static string ErrorWithBusinessValidation {
             get {
                 return ResourceManager.GetString("ErrorWithBusinessValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request body {RequestBody}.
+        /// </summary>
+        public static string InfoRequestBody {
+            get {
+                return ResourceManager.GetString("InfoRequestBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request headers {RequestHeaders}.
+        /// </summary>
+        public static string InfoRequestHeaders {
+            get {
+                return ResourceManager.GetString("InfoRequestHeaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request information {RequestMethod} {RequestPath}.
+        /// </summary>
+        public static string InfoRequestMethodPath {
+            get {
+                return ResourceManager.GetString("InfoRequestMethodPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request query string {QueryString}.
+        /// </summary>
+        public static string InfoRequestQueryString {
+            get {
+                return ResourceManager.GetString("InfoRequestQueryString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request started by user: {UserName} from client IP: {ClientIp} with UserAgent: {ClientAgent}.
+        /// </summary>
+        public static string InfoRequestStart {
+            get {
+                return ResourceManager.GetString("InfoRequestStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response body {ResponseBody}.
+        /// </summary>
+        public static string InfoResponseBody {
+            get {
+                return ResourceManager.GetString("InfoResponseBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response content type {ContentType}.
+        /// </summary>
+        public static string InfoResponseContentType {
+            get {
+                return ResourceManager.GetString("InfoResponseContentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response information {RequestMethod} {RequestPath} {statusCode}.
+        /// </summary>
+        public static string InfoResponseGeneral {
+            get {
+                return ResourceManager.GetString("InfoResponseGeneral", resourceCulture);
             }
         }
         

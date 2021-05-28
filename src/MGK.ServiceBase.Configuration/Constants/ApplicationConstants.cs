@@ -1,4 +1,4 @@
-﻿namespace MGK.ServiceBase.Constants
+﻿namespace MGK.ServiceBase.Configuration.Constants
 {
 	/// <summary>
 	/// Represents a shortcut to keys used by the application globally.
