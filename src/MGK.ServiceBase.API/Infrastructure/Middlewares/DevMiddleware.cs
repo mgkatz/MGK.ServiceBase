@@ -1,6 +1,6 @@
 ﻿using MGK.Acceptance;
 using MGK.Extensions;
-using MGK.ServiceBase.Constants;
+using MGK.ServiceBase.Configuration.Constants;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
@@ -44,7 +44,7 @@ namespace MGK.ServiceBase.Infrastructure.Middlewares
 		/// <param name="context">The http context.</param>
 		public virtual void ConfigureHttpContext(HttpContext context)
 		{
-			var debugClientAlias = _configuration.GetValue<string>(AppConfigurationKeys.DebugClientAlias);
+			var debugClientAlias = _configuration.GetValue<string>(ConfigurationKeys.DebugClientAlias);
 
 			if (!debugClientAlias.IsNullOrEmptyOrWhiteSpace())
 			{

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
-using System.Reflection;
 
 namespace MGK.ServiceBase.Infrastructure.Extensions
 {
@@ -19,7 +18,7 @@ namespace MGK.ServiceBase.Infrastructure.Extensions
         /// <param name="configuration">The application configuration.</param>
         public static void AddBaseAppConfigurations(this IApplicationBuilder app, IConfiguration configuration)
         {
-            app.AddAppConfigurationsInAssembly<ConfigurationSetup>(configuration);
+            app.AddAppConfigurationsInAssembly<IStartup>(configuration);
         }
 
         /// <summary>

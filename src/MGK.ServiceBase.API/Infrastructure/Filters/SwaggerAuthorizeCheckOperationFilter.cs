@@ -1,4 +1,4 @@
-﻿using MGK.ServiceBase.Constants;
+﻿using MGK.ServiceBase.Configuration.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;

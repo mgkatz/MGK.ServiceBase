@@ -1,4 +1,4 @@
-﻿using MGK.ServiceBase.Constants;
+﻿using MGK.ServiceBase.Configuration.Constants;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;

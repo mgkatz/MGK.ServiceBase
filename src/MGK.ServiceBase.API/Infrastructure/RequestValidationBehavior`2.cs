@@ -35,7 +35,7 @@ namespace MGK.ServiceBase.Infrastructure
                 .Where(f => f != null)
                 .ToList();
 
-            if (errors.Any())
+            if (errors?.Any() == true)
             {
                 var errorBuilder = new StringBuilder();
 

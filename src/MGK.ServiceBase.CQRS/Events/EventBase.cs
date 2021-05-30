@@ -7,12 +7,6 @@ namespace MGK.ServiceBase.CQRS.Events
 {
 	public abstract class EventBase : IEvent, ISerializable
 	{
-		public Guid Id { get; }
-
-		public DateTime CreationDate { get; }
-
-		public EventType EventType { get; }
-
 		protected EventBase()
 		{
 			Id = Guid.NewGuid();
@@ -26,6 +20,12 @@ namespace MGK.ServiceBase.CQRS.Events
 			CreationDate = creationDate;
 			EventType = eventType;
 		}
+
+		public Guid Id { get; }
+
+		public DateTime CreationDate { get; }
+
+		public EventType EventType { get; }
 
 		public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
 		{

@@ -1,4 +1,5 @@
 ﻿using MGK.Extensions;
+using MGK.ServiceBase.Configuration.SeedWork;
 using MGK.ServiceBase.Constants;
 using MGK.ServiceBase.Infrastructure.Exceptions;
 using MGK.ServiceBase.SeedWork;
@@ -12,15 +13,17 @@ namespace MGK.ServiceBase.Registering.App
     {
         public virtual void ConfigureApp(IApplicationBuilder app, IConfiguration configuration)
         {
-            var serviceParameters = app.ApplicationServices.GetService<IServiceParameters>();
+            var serviceParameters = app.ApplicationServices.GetService<IMicroServiceParameters>();
 
             if (serviceParameters.ContextPath.IsNullOrEmptyOrWhiteSpace())
             {
-                throw new ApplicationValidationException(BaseResources.MessagesResources.ErrorInternalServerError, BaseResources.MessagesResources.ErrorContextPathNotDefined);
+                throw new ApplicationValidationException(
+                    IWEResources.MessagesResources.ErrorInternalServerError,
+                    BaseResources.MessagesResources.ErrorContextPathNotDefined);
             }
 
             const string swagger = "swagger";
-            var swaggerFile = $"{swagger}.json";
+			const string swaggerFile = swagger + ".json";
             var routePrefix = serviceParameters.ContextPath + swagger;
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.

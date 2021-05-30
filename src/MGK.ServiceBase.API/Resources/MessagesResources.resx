@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ErrorAliasNotExist" xml:space="preserve">
-    <value>The Alias was not provided.</value>
-  </data>
   <data name="ErrorApplicationBrake" xml:space="preserve">
     <value>Program terminated unexpectedly!</value>
   </data>
@@ -128,18 +125,6 @@
   </data>
   <data name="ErrorContextPathNotDefined" xml:space="preserve">
     <value>The path that defines the context of the API is not defined.</value>
-  </data>
-  <data name="ErrorDatabaseConfigurationNotAvailable" xml:space="preserve">
-    <value>The database configuration for '{0}' is not available.</value>
-  </data>
-  <data name="ErrorDatabaseNameNotExist" xml:space="preserve">
-    <value>The provided database name does not exist.</value>
-  </data>
-  <data name="ErrorInternalServerError" xml:space="preserve">
-    <value>Internal Server Error</value>
-  </data>
-  <data name="ErrorRequestContextNull" xml:space="preserve">
-    <value>The request context cannot be null.</value>
   </data>
   <data name="ErrorServiceValidation" xml:space="preserve">
     <value>Service Validation failed</value>
@@ -153,11 +138,32 @@
   <data name="ErrorValidatorsTitle" xml:space="preserve">
     <value>Invalid Request, reasons:</value>
   </data>
-  <data name="ErrorWithArgument" xml:space="preserve">
-    <value>Argument Exception</value>
-  </data>
   <data name="ErrorWithBusinessValidation" xml:space="preserve">
     <value>Conflict Business Validation</value>
+  </data>
+  <data name="InfoRequestBody" xml:space="preserve">
+    <value>Request body {RequestBody}</value>
+  </data>
+  <data name="InfoRequestHeaders" xml:space="preserve">
+    <value>Request headers {RequestHeaders}</value>
+  </data>
+  <data name="InfoRequestMethodPath" xml:space="preserve">
+    <value>Request information {RequestMethod} {RequestPath}</value>
+  </data>
+  <data name="InfoRequestQueryString" xml:space="preserve">
+    <value>Request query string {QueryString}</value>
+  </data>
+  <data name="InfoRequestStart" xml:space="preserve">
+    <value>Request started by user: {UserName} from client IP: {ClientIp} with UserAgent: {ClientAgent}</value>
+  </data>
+  <data name="InfoResponseBody" xml:space="preserve">
+    <value>Response body {ResponseBody}</value>
+  </data>
+  <data name="InfoResponseContentType" xml:space="preserve">
+    <value>Response content type {ContentType}</value>
+  </data>
+  <data name="InfoResponseGeneral" xml:space="preserve">
+    <value>Response information {RequestMethod} {RequestPath} {statusCode}</value>
   </data>
   <data name="InformationSwaggerDescription" xml:space="preserve">
     <value>Enter 'Bearer' following by space and the token.</value>
