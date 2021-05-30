@@ -2,6 +2,7 @@
 using MGK.Extensions;
 using MGK.ServiceBase.Constants;
 using MGK.ServiceBase.Infrastructure.Exceptions;
+using MGK.ServiceBase.IWEManager.Infrastructure.Extensions;
 using MGK.ServiceBase.IWEManager.Infrastructure.Middlewares;
 using MGK.ServiceBase.IWEManager.Models;
 using MGK.ServiceBase.Services.Infrastructure.Exceptions;
@@ -45,7 +46,10 @@ namespace MGK.ServiceBase.Infrastructure.Middlewares
 										serviceValidationException.Message),
 
 				// Exception Not Controlled => Internal Server Error
-				_ => GetOtherErrorDetails(error),
+				_ => new ErrorDetails(
+					StatusCodes.Status500InternalServerError,
+					IWEResources.MessagesResources.ErrorInternalServerError,
+					error.GetExceptionMesssages())
 			};
 		}
 	}

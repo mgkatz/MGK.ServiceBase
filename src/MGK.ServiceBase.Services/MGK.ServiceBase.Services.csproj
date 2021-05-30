@@ -29,4 +29,20 @@
     <ProjectReference Include="..\MGK.ServiceBase.IWEManager\MGK.ServiceBase.IWEManager.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Resources\MessagesResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MessagesResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\MessagesResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ServicesResources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

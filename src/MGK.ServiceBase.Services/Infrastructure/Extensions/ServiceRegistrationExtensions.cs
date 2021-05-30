@@ -1,7 +1,11 @@
-﻿using MGK.ServiceBase.Services.SeedWork;
+﻿using MGK.Acceptance;
+using MGK.Extensions;
+using MGK.ServiceBase.Services.Infrastructure.Exceptions;
+using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MGK.ServiceBase.Services.Infrastructure.Extensions
@@ -29,5 +33,29 @@ namespace MGK.ServiceBase.Services.Infrastructure.Extensions
 
             assemblyServices.ForEach(svc => svc.RegisterServices(services, configuration));
         }
-    }
+
+        public static void AddKeyedServices<T, TKey>(this IServiceCollection services, IDictionary<TKey, Type> servicesToRegister)
+            where T : class
+            where TKey : notnull
+        {
+            foreach (var serviceToRegister in servicesToRegister.Values)
+			{
+                services.AddTransient(serviceToRegister);
+			}
+
+            services.AddScoped<Func<TKey, T>>(provider => (key) =>
+            {
+                if (servicesToRegister.ContainsKey(key))
+                {
+                    return provider.GetRequiredService(servicesToRegister[key]) as T;
+				}
+                else
+                {
+                    throw new ServiceRegistrationException(
+                        ServicesResources.MessagesResources.ErrorRegisteringTitle,
+                        ServicesResources.MessagesResources.ErrorRegisteringMessage.Format(key));
+                }
+            });
+        }
+	}
 }
