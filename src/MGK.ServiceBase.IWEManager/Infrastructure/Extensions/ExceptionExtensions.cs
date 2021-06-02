@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MGK.ServiceBase.IWEManager.Infrastructure.Exceptions;
+using System;
 using System.Text;
 
 namespace MGK.ServiceBase.IWEManager.Infrastructure.Extensions
@@ -17,6 +18,11 @@ namespace MGK.ServiceBase.IWEManager.Infrastructure.Extensions
 		{
 			var sb = new StringBuilder();
 			sb.AppendLine(source.Message);
+
+			if (source is BaseException baseException)
+			{
+				sb.AppendLine(baseException.Details);
+			}
 
 			if (source.InnerException != null)
 				sb.AppendLine(source.InnerException.GetExceptionMesssages());
