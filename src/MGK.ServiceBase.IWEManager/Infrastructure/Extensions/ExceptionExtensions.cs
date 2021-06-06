@@ -17,12 +17,14 @@ namespace MGK.ServiceBase.IWEManager.Infrastructure.Extensions
 		public static string GetExceptionMesssages(this Exception source)
 		{
 			var sb = new StringBuilder();
-			sb.AppendLine(source.Message);
+			var message = source.Message;
 
 			if (source is BaseException baseException)
 			{
-				sb.AppendLine(baseException.Details);
+				message += $" - {baseException.Details}";
 			}
+
+			sb.AppendLine(message);
 
 			if (source.InnerException != null)
 				sb.AppendLine(source.InnerException.GetExceptionMesssages());
