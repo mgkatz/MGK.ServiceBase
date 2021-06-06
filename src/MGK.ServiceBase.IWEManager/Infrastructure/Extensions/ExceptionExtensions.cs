@@ -26,6 +26,11 @@ namespace MGK.ServiceBase.IWEManager.Infrastructure.Extensions
 
 			sb.AppendLine(message);
 
+			if (source is BaseException baseException)
+			{
+				sb.AppendLine(baseException.Details);
+			}
+
 			if (source.InnerException != null)
 				sb.AppendLine(source.InnerException.GetExceptionMesssages());
 
