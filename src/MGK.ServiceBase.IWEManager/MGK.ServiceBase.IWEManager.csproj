@@ -6,7 +6,7 @@
     <Authors>Matías Gabriel Katz</Authors>
     <Description>Base package to manage information, warning and/or error items.</Description>
     <Copyright>Matías Gabriel Katz (c) 2021</Copyright>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/mgkatz/MGK.ServiceBase</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mgkatz/MGK.ServiceBase</RepositoryUrl>
