@@ -8,7 +8,7 @@ namespace MGK.ServiceBase.Services
 	public abstract class InternalServices<T> : IInternalServices<T>
 		where T : class, IService
 	{
-		public InternalServices(
+		protected InternalServices(
 			IMapper mapper,
 			ILogger<T> logger)
 		{

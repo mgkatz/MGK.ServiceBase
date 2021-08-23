@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MGK.ServiceBase.DAL.SeedWork
@@ -10,7 +11,7 @@ namespace MGK.ServiceBase.DAL.SeedWork
 
 		void AddRange<T>(IEnumerable<T> entities) where T : class, IDataUnit;
 
-		Task<int> CommitChangesAsync();
+		Task<int> CommitChangesAsync(CancellationToken cancellationToken = default);
 
 		void Remove<T>(T entity) where T : class, IDataUnit;
 

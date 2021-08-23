@@ -1,8 +1,10 @@
 ﻿using MGK.Acceptance;
 using MGK.ServiceBase.DAL.SeedWork;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MGK.ServiceBase.DAL.Infrastructure.UnitOfWork
@@ -10,14 +12,20 @@ namespace MGK.ServiceBase.DAL.Infrastructure.UnitOfWork
 	public abstract class UnitOfWork<TContext> : IUnitOfWork
 		where TContext : DbContext
 	{
-		protected TContext Context { get; }
-
-		protected UnitOfWork(TContext context)
+		protected UnitOfWork(
+			TContext context,
+			ILogger<TContext> logger)
 		{
 			Ensure.Parameter.IsNotNull(context, nameof(context));
+			Ensure.Parameter.IsNotNull(logger, nameof(logger));
 
 			Context = context;
+			Logger = logger;
 		}
+
+		protected TContext Context { get; }
+
+		protected ILogger<TContext> Logger { get; }
 
 		public virtual T Add<T>(T entity) where T : class, IDataUnit
 		{
@@ -28,8 +36,16 @@ namespace MGK.ServiceBase.DAL.Infrastructure.UnitOfWork
 		public virtual void AddRange<T>(IEnumerable<T> entities) where T : class, IDataUnit
 			=> Context.Set<T>().AddRange(entities);
 
-		public virtual async Task<int> CommitChangesAsync()
-			=> await Context.SaveChangesAsync();
+		public virtual async Task<int> CommitChangesAsync(CancellationToken cancellationToken = default)
+		{
+			if (cancellationToken.IsCancellationRequested)
+			{
+				Logger.LogWarning(DALResources.MessagesResources.WarningCommitCancelled);
+				return -1;
+			}
+
+			return await Context.SaveChangesAsync(cancellationToken);
+		}
 
 		public virtual void Remove<T>(T entity) where T : class, IDataUnit
 			=> Context.Set<T>().Remove(entity);

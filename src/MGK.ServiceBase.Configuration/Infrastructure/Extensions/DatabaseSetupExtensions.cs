@@ -1,4 +1,5 @@
 ﻿using MGK.Acceptance;
+using MGK.Extensions;
 using MGK.ServiceBase.Configuration.SeedWork;
 using System;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace MGK.ServiceBase.Configuration.Infrastructure.Extensions
             Ensure.Parameter.IsNotNullNorEmptyNorWhiteSpace(databaseAlias, nameof(databaseAlias));
 
             if (!source.Databases.Any(d => d.Alias.Equals(databaseAlias, StringComparison.InvariantCultureIgnoreCase)))
-                Raise.Error.Base(ConfigurationResources.MessagesResources.ErrorDatabaseNameNotExist);
+                Raise.Error.Base(ConfigurationResources.MessagesResources.ErrorDatabaseNameNotExist.Format(databaseAlias));
         }
     }
 }

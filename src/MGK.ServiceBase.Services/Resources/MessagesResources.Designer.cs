@@ -77,5 +77,14 @@ namespace ServicesResources {
                 return ResourceManager.GetString("ErrorRegisteringTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Validation failed.
+        /// </summary>
+        public static string ErrorServiceValidation {
+            get {
+                return ResourceManager.GetString("ErrorServiceValidation", resourceCulture);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MGK.ServiceBase.IWEManager.Infrastructure.Exceptions;
+﻿using MGK.Extensions;
+using MGK.ServiceBase.IWEManager.Infrastructure.Exceptions;
 using System;
 using System.Text;
 
@@ -19,7 +20,7 @@ namespace MGK.ServiceBase.IWEManager.Infrastructure.Extensions
 			var sb = new StringBuilder();
 			var message = source.Message;
 
-			if (source is BaseException baseException)
+			if (source is BaseException baseException && !baseException.Details.IsNullOrEmptyOrWhiteSpace())
 			{
 				message += $" - {baseException.Details}";
 			}

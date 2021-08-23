@@ -1,5 +1,4 @@
-﻿using MGK.Acceptance;
-using MGK.Extensions;
+﻿using MGK.Extensions;
 using MGK.ServiceBase.Services.Infrastructure.Exceptions;
 using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;

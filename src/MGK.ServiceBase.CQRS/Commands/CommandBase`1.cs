@@ -10,17 +10,17 @@ namespace MGK.ServiceBase.CQRS.Commands
     public abstract class CommandBase<TResult> : ICommand<TResult>
         where TResult : IContract
     {
-        public Guid Id { get; }
-
         protected CommandBase()
         {
             Id = Guid.NewGuid();
         }
 
-        protected CommandBase(Guid guid)
+        protected CommandBase(Guid commandId)
         {
-            Id = guid;
+            Id = commandId;
         }
+
+        public Guid Id { get; }
 
         public override bool Equals(object obj)
         {

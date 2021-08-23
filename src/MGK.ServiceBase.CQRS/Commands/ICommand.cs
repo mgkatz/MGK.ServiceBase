@@ -9,7 +9,7 @@ namespace MGK.ServiceBase.CQRS.Commands
     /// </summary>
     public interface ICommand : IRequest
     {
-        Guid Guid { get; }
+        Guid Id { get; }
     }
 
     /// <summary>

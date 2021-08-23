@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Matías Gabriel Katz</Authors>
-    <Description>Base package for microservices.</Description>
+    <Description>Base package for api project on microservices.</Description>
     <Copyright>Matías Gabriel Katz (c) 2020-2021</Copyright>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/mgkatz/MGK.ServiceBase</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mgkatz/MGK.ServiceBase</RepositoryUrl>
@@ -26,11 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\ContextResources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ContextResources.resx</DependentUpon>
-    </Compile>
     <Compile Update="Resources\MessagesResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -39,11 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\ContextResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ContextResources.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>BaseResources</CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Update="Resources\MessagesResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>MessagesResources.Designer.cs</LastGenOutput>

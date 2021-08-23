@@ -79,7 +79,7 @@ namespace ConfigurationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The provided database name does not exist..
+        ///   Looks up a localized string similar to The provided database name &apos;{0}&apos; does not exist..
         /// </summary>
         public static string ErrorDatabaseNameNotExist {
             get {

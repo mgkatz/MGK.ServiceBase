@@ -88,15 +88,6 @@ namespace BaseResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service Validation failed.
-        /// </summary>
-        public static string ErrorServiceValidation {
-            get {
-                return ResourceManager.GetString("ErrorServiceValidation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The service parameters were not registered..
         /// </summary>
         public static string ErrorSwaggerRegistrationDescription {

@@ -95,5 +95,14 @@ namespace DALResources {
                 return ResourceManager.GetString("ErrorContextName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The commit of the changes was cancelled..
+        /// </summary>
+        public static string WarningCommitCancelled {
+            get {
+                return ResourceManager.GetString("WarningCommitCancelled", resourceCulture);
+            }
+        }
     }
 }

@@ -126,9 +126,6 @@
   <data name="ErrorContextPathNotDefined" xml:space="preserve">
     <value>The path that defines the context of the API is not defined.</value>
   </data>
-  <data name="ErrorServiceValidation" xml:space="preserve">
-    <value>Service Validation failed</value>
-  </data>
   <data name="ErrorSwaggerRegistrationDescription" xml:space="preserve">
     <value>The service parameters were not registered.</value>
   </data>
