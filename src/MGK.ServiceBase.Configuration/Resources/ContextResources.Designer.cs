@@ -70,6 +70,15 @@ namespace ConfigurationResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Server={0};Database={1};Uid={2};Pwd={3};.
+        /// </summary>
+        public static string ConnectionStringMySqlUserPassword {
+            get {
+                return ResourceManager.GetString("ConnectionStringMySqlUserPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data Source={0};Initial Catalog={1};User ID={2};Password={3};.
         /// </summary>
         public static string ConnectionStringUserPassword {

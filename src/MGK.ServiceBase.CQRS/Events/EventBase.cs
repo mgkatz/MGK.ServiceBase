@@ -14,9 +14,9 @@ namespace MGK.ServiceBase.CQRS.Events
 			EventType = EventType.Domain;
 		}
 
-		protected EventBase(Guid id, DateTime creationDate, EventType eventType)
+		protected EventBase(Guid eventId, DateTime creationDate, EventType eventType)
 		{
-			Id = id;
+			Id = eventId;
 			CreationDate = creationDate;
 			EventType = eventType;
 		}

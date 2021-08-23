@@ -28,7 +28,11 @@ namespace MGK.ServiceBase.Infrastructure.Middlewares
 				Ensure.Parameter.IsNotNull(httpContext, nameof(httpContext));
 
 			var requestStartedAt = DateTime.Now;
-			LogContext.PushProperty("UserName", httpContext.User.Identity.Name);
+			var userName = string.IsNullOrWhiteSpace(httpContext?.User?.Identity?.Name)
+				? "Anonymous"
+				: httpContext.User.Identity.Name;
+
+			LogContext.PushProperty("UserName", userName);
 			LogContext.PushProperty("CorrelationId", httpContext.TraceIdentifier);
 
 			// Leave the body open so the next middleware can read it.
