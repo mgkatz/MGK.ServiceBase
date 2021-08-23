@@ -123,4 +123,7 @@
   <data name="ErrorRegisteringTitle" xml:space="preserve">
     <value>Service registration error</value>
   </data>
+  <data name="ErrorServiceValidation" xml:space="preserve">
+    <value>Service Validation failed</value>
+  </data>
 </root>

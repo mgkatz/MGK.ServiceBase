@@ -24,7 +24,7 @@ namespace MGK.ServiceBase.IWEManager.Infrastructure.Middlewares
 
         protected IConfiguration Configuration { get; }
 
-        public async Task InvokeAsync(HttpContext httpContext)
+        public async virtual Task InvokeAsync(HttpContext httpContext)
 		{
 			var feature = httpContext.Features.Get<IExceptionHandlerPathFeature>();
 

@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace MGK.ServiceBase.IWEManager.Infrastructure.Exceptions
 {
     [Serializable]
-	[SuppressMessage("Design", "RCS1194:Implement exception constructors.", Justification = "<Pending>")]
+	[SuppressMessage("Design", "RCS1194:Implement exception constructors.", Justification = "Only some specific constructors are needed.")]
 	public abstract class BaseException : Exception
     {
         protected BaseException(SerializationInfo info, StreamingContext context)

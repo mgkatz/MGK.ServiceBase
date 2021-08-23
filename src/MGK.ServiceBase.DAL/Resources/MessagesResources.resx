@@ -129,4 +129,7 @@
   <data name="ErrorContextName" xml:space="preserve">
     <value>The database context name cannot be null, empty or white spaces.</value>
   </data>
+  <data name="WarningCommitCancelled" xml:space="preserve">
+    <value>The commit of the changes was cancelled.</value>
+  </data>
 </root>

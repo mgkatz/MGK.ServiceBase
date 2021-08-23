@@ -5,14 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace MGK.ServiceBase.Services
 {
-	public abstract class ServiceBase<T>
+	public abstract class ServiceHandler<T>
 		where T : class, IService
 	{
-		protected ServiceBase(IInternalServices<T> internalServices)
+		protected ServiceHandler(IInternalServices<T> internalServices)
 		{
 			Ensure.Parameter.IsNotNull(internalServices, nameof(internalServices));
-			Ensure.Value.IsNotNull(internalServices.Logger, nameof(internalServices.Logger));
-			Ensure.Value.IsNotNull(internalServices.Mapper, nameof(internalServices.Mapper));
 
 			Logger = internalServices.Logger;
 			Mapper = internalServices.Mapper;

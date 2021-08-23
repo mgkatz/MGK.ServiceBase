@@ -42,7 +42,7 @@ namespace MGK.ServiceBase.Infrastructure.Middlewares
 				// Service Validations
 				ServiceValidationException serviceValidationException => new ErrorDetails(
 										StatusCodes.Status409Conflict,
-										BaseResources.MessagesResources.ErrorServiceValidation,
+										ServicesResources.MessagesResources.ErrorServiceValidation,
 										serviceValidationException.Message),
 
 				// Exception Not Controlled => Internal Server Error
