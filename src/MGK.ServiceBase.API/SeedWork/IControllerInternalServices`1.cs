@@ -1,11 +1,9 @@
 ﻿using MediatR;
-using MGK.ServiceBase.Services.SeedWork;
 
-namespace MGK.ServiceBase.SeedWork
+namespace MGK.ServiceBase.API.SeedWork;
+
+public interface IControllerInternalServices<T> : IInternalServices<T>
+	where T : IControllerService
 {
-	public interface IControllerInternalServices<T> : IInternalServices<T>
-		where T : IControllerService
-	{
-		IMediator Mediator { get; }
-	}
+	IMediator Mediator { get; }
 }

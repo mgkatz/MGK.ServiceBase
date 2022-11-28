@@ -1,22 +1,20 @@
-﻿using MGK.ServiceBase.Services.SeedWork;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MGK.ServiceBase.Registering.Service
+namespace MGK.ServiceBase.API.Registering.Service;
+
+/// <summary>
+/// Register services related to the events management.
+/// </summary>
+public class RegisterEventBus : IServiceRegistration
 {
 	/// <summary>
-	/// Register services related to the events management.
+	/// Configures services related to the events management through the IServiceCollection.
 	/// </summary>
-	public class RegisterEventBus : IServiceRegistration
+	/// <param name="services">The collection of services.</param>
+	/// <param name="configuration">The configuration information.</param>
+	public virtual void RegisterServices(IServiceCollection services, IConfiguration configuration)
 	{
-		/// <summary>
-		/// Configures services related to the events management through the IServiceCollection.
-		/// </summary>
-		/// <param name="services">The collection of services.</param>
-		/// <param name="configuration">The configuration information.</param>
-		public virtual void RegisterServices(IServiceCollection services, IConfiguration configuration)
-		{
-			//Register here the EventBus and all the things related to events, producers and consumers.
-		}
+		//Register here the EventBus and all the things related to events, producers and consumers.
 	}
 }

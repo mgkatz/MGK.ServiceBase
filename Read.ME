@@ -1,0 +1,55 @@
+****************************
+* Sections for appsettings *
+****************************
+In case you want to use databases, the following structure is the expected one:
+
+{
+  "databaseSetup": [
+    {
+      "alias": "<HERE_YOU_CAN_SET_AN_ALIAS_FOR_THE_CONNECTION>",
+      "databases": [
+        {
+          "alias": "<HERE_YOU_CAN_SET_AN_ALIAS_FOR_THE_DB>",
+          "name": "<HERE_YOU_CAN_SET_THE_NAME_OF_THE_DB>",
+          "queryTimeout": <HERE_YOU_CAN_SET_A_TIMEOUT_VALUE_FOR_THE_QUERIES>
+        },
+        {
+          "alias": "<HERE_YOU_CAN_SET_AN_ALIAS_FOR_THE_DB>",
+          "name": "<HERE_YOU_CAN_SET_THE_NAME_OF_THE_DB>",
+          "queryTimeout": <HERE_YOU_CAN_SET_A_TIMEOUT_VALUE_FOR_THE_QUERIES>
+        }
+      ],
+      "server": "<HERE_YOU_CAN_SET_THE_NAME_OF_DB_SERVER>",
+      "userID": "<HERE_YOU_CAN_SET_A_USERID_OR_A_USERNAME_IF_THE_CONNECTION_IS_WITH_USER_AND_PASSWORD>",
+      "password": "<HERE_YOU_CAN_SET_A_PASSWORD_IF_THE_CONNECTION_IS_WITH_USER_AND_PASSWORD>",
+      "useIntegratedSecurity": "<HERE_YOU_CAN_SET_A_BOOLEAN_VALUE_TO_USE_INTEGRATED_SECURITY_OR_NOT>",
+      "trustServerCertificate": true // By default this property should be always on false. The true value should be used only on local environments for development and/or testing.
+    }
+  ]
+}
+
+In case you want to use Jwt authentication, the following structure is the expected one:
+
+{
+  "JwtAuth": {
+    "Issuer": "<HERE_GOES_THE_URL_OF_THE_SITE>",
+    "Audience": "<HERE_GOES_THE_URL_OF_THE_SITE>",
+    "Key": "<HERE_GOES_A_KEY_USED_FOR_THE_TOKEN_GENERATION_TRY_TO_USE_A_LONG_VALUE_TO_MAKE_HARDER_THE_POSSIBILITY_OF_HACKING>",
+    "Expiration": 0, // Time in minutes
+    "Refresh": 0 // Time in minutes
+  }
+}
+
+In case you want to be able to send emails, the following structure is the expected one:
+
+{
+  "Smtp": {
+    "Client": "<HERE_GOES_THE_SMTP_URL_DOMAIN>",
+    "Port": <HERE_GOES_THE_SERVER_PORT>,
+    "Username": "<HERE_GOES_THE_USERNAME_OF_THE_ACCOUNT_USED_TO_LOGIN_TO_THE_SMTP_SERVER>",
+    "Password": "<HERE_GOES_THE_PASSWORD_OF_THE_ACCOUNT_USED_TO_LOGIN_TO_THE_SMTP_SERVER>",
+    "EnableSsl": <HERE_GOES_A_BOOLEAN_VALUE_INDICATING_IF_SSL_SHOULD_BE_USED>,
+    "Timeout": "<HERE_GOES_AN_INTEGER_VALUE_IN_MILLISECONDS_WITH_THE_VALUE_FOR_TIMEOUT>",
+    "Retries": "<HERE_GOES_AN_INTEGER_VALUE_WITH_THE_NUMBER_OF_TIMES_TO_RETRY_THE_OPERATION>",
+  }
+}

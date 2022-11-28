@@ -70,6 +70,15 @@ namespace IWEResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The entity responsible for the message log could not be retrieved..
+        /// </summary>
+        public static string ErrorLogger {
+            get {
+                return ResourceManager.GetString("ErrorLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Argument Exception.
         /// </summary>
         public static string ErrorWithArgument {

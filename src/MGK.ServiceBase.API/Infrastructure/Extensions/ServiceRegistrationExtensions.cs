@@ -1,23 +1,21 @@
-﻿using MGK.ServiceBase.SeedWork;
-using MGK.ServiceBase.Services.Infrastructure.Extensions;
+﻿using MGK.ServiceBase.Services.Infrastructure.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MGK.ServiceBase.Infrastructure.Extensions
+namespace MGK.ServiceBase.API.Infrastructure.Extensions;
+
+/// <summary>
+/// Extensions for the registration of services using dependency injection.
+/// </summary>
+public static class ServiceRegistrationExtensions
 {
     /// <summary>
-    /// Extensions for the registration of services using dependency injection.
+    /// Registers all the base services.
     /// </summary>
-    public static class ServiceRegistrationExtensions
+    /// <param name="services">The services collection.</param>
+    /// <param name="configuration">The application configuration.</param>
+    public static void AddApiServices(this IServiceCollection services, IConfiguration configuration)
     {
-        /// <summary>
-        /// Registers all the base services.
-        /// </summary>
-        /// <param name="services">The services collection.</param>
-        /// <param name="configuration">The application configuration.</param>
-        public static void AddApiServices(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddServicesInAssembly<IStartup>(configuration);
-        }
+        services.AddServicesInAssembly<IStartup>(configuration);
     }
 }

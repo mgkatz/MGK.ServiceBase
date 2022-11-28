@@ -1,8 +1,7 @@
-﻿namespace MGK.ServiceBase.DAL.Infrastructure.Enums
+﻿namespace MGK.ServiceBase.DAL.Infrastructure.Enums;
+
+public enum SortOrder
 {
-    public enum SortOrder
-    {
-        Ascending = 0,
-        Descending = 1
-    }
+    Ascending = 0,
+    Descending = 1
 }
