@@ -1,20 +1,17 @@
-﻿using System.Collections.Generic;
+﻿namespace MGK.ServiceBase.Configuration.SeedWork;
 
-namespace MGK.ServiceBase.Configuration.SeedWork
+/// <summary>
+/// Allows you to implement a way to have at hand information of a multi-tenant environment.
+/// </summary>
+public interface IMultiTenantSetup
 {
 	/// <summary>
-	/// Allows you to implement a way to have at hand information of a multi-tenant environment.
+	/// Gets the client alias that is currently configured.
 	/// </summary>
-	public interface IMultiTenantSetup
-	{
-		/// <summary>
-		/// Gets the client alias that is currently configured.
-		/// </summary>
-		string CurrentClientAlias { get; }
+	string CurrentClientAlias { get; }
 
-		/// <summary>
-		/// Gets the information of the databases configured by alias.
-		/// </summary>
-		IDictionary<string, IDbServerSetup> DatabasesByAliases { get; }
-	}
+	/// <summary>
+	/// Gets the information of the databases configured by alias.
+	/// </summary>
+	IDictionary<string, IDbServerSetup> DatabasesByAliases { get; }
 }

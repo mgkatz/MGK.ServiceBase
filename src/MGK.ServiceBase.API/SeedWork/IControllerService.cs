@@ -1,8 +1,5 @@
-﻿using MGK.ServiceBase.Services.SeedWork;
+﻿namespace MGK.ServiceBase.API.SeedWork;
 
-namespace MGK.ServiceBase.SeedWork
+public interface IControllerService : IService
 {
-	public interface IControllerService : IService
-	{
-	}
 }

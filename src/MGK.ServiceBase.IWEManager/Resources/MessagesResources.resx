@@ -120,6 +120,9 @@
   <data name="ErrorInternalServerError" xml:space="preserve">
     <value>Internal Server Error</value>
   </data>
+  <data name="ErrorLogger" xml:space="preserve">
+    <value>The entity responsible for the message log could not be retrieved.</value>
+  </data>
   <data name="ErrorWithArgument" xml:space="preserve">
     <value>Argument Exception</value>
   </data>

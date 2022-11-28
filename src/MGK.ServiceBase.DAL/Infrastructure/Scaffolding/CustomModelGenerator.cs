@@ -1,50 +1,51 @@
-﻿using MGK.Extensions;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Scaffolding;
-using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
-using System;
-using System.Linq;
+﻿// TODO: review the CSharpModelGenerator because in EF Core 7 the ICSharpDbContextGenerator and ICSharpEntityTypeGenerator do not exist anymore. Need to confirm how this works now.
 
-namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding
-{
-	public class CustomModelGenerator : CSharpModelGenerator
-	{
-		private readonly string[] _exclusions;
-		private readonly string[] _inclusions;
+//using MGK.Extensions;
+//using Microsoft.EntityFrameworkCore.Metadata;
+//using Microsoft.EntityFrameworkCore.Metadata.Internal;
+//using Microsoft.EntityFrameworkCore.Scaffolding;
+//using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
+//using System;
+//using System.Linq;
 
-		public CustomModelGenerator(
-			ModelCodeGeneratorDependencies dependencies,
-			ICSharpDbContextGenerator cSharpDbContextGenerator,
-			ICSharpEntityTypeGenerator cSharpEntityTypeGenerator)
-			: this(dependencies, cSharpDbContextGenerator, cSharpEntityTypeGenerator, Array.Empty<string>(), Array.Empty<string>())
-		{
-		}
+//namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding;
 
-		public CustomModelGenerator(
-			ModelCodeGeneratorDependencies dependencies,
-			ICSharpDbContextGenerator cSharpDbContextGenerator,
-			ICSharpEntityTypeGenerator cSharpEntityTypeGenerator,
-			string[] inclusions,
-			string[] exclusions)
-			: base(dependencies, cSharpDbContextGenerator, cSharpEntityTypeGenerator)
-		{
-			_inclusions = inclusions;
-			_exclusions = exclusions;
-		}
+//public class CustomModelGenerator : CSharpModelGenerator
+//{
+//	private readonly string[] _exclusions;
+//	private readonly string[] _inclusions;
 
-		public override ScaffoldedModel GenerateModel(IModel model, ModelCodeGenerationOptions options)
-		{
-			while (model.GetEntityTypes().Any(et => et.Name.In(_exclusions, ignoreCase: true))
-				&& !model.GetEntityTypes().Any(et => et.Name.In(_inclusions, ignoreCase: true)))
-			{
-				var entityType = model.GetEntityTypes()
-					.First(et => et.Name.In(_exclusions, ignoreCase: true))
-					as EntityType;
-				model.AsModel().RemoveEntityType(entityType);
-			}
+//	public CustomModelGenerator(
+//		ModelCodeGeneratorDependencies dependencies,
+//		ICSharpDbContextGenerator cSharpDbContextGenerator,
+//		ICSharpEntityTypeGenerator cSharpEntityTypeGenerator)
+//		: this(dependencies, cSharpDbContextGenerator, cSharpEntityTypeGenerator, Array.Empty<string>(), Array.Empty<string>())
+//	{
+//	}
 
-			return base.GenerateModel(model, options);
-		}
-	}
-}
+//	public CustomModelGenerator(
+//		ModelCodeGeneratorDependencies dependencies,
+//		ICSharpDbContextGenerator cSharpDbContextGenerator,
+//		ICSharpEntityTypeGenerator cSharpEntityTypeGenerator,
+//		string[] inclusions,
+//		string[] exclusions)
+//		: base(dependencies, cSharpDbContextGenerator, cSharpEntityTypeGenerator)
+//	{
+//		_inclusions = inclusions;
+//		_exclusions = exclusions;
+//	}
+
+//	public override ScaffoldedModel GenerateModel(IModel model, ModelCodeGenerationOptions options)
+//	{
+//		while (model.GetEntityTypes().Any(et => et.Name.IsIn(_exclusions, ignoreCase: true))
+//			&& !model.GetEntityTypes().Any(et => et.Name.IsIn(_inclusions, ignoreCase: true)))
+//		{
+//			var entityType = model.GetEntityTypes()
+//				.First(et => et.Name.IsIn(_exclusions, ignoreCase: true))
+//				as EntityType;
+//			model.AsModel().RemoveEntityType(entityType);
+//		}
+
+//		return base.GenerateModel(model, options);
+//	}
+//}

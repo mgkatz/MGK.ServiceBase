@@ -1,6 +1,5 @@
-﻿namespace MGK.ServiceBase.Services.SeedWork
+﻿namespace MGK.ServiceBase.Services.SeedWork;
+
+public interface IService
 {
-	public interface IService
-	{
-	}
 }

@@ -1,56 +1,55 @@
 ﻿using FluentValidation;
 using MediatR;
-using MGK.Acceptance;
-using MGK.ServiceBase.Infrastructure.Exceptions;
+using MGK.ServiceBase.API.Infrastructure.Exceptions;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MGK.ServiceBase.Infrastructure
+namespace MGK.ServiceBase.API.Infrastructure;
+
+public class RequestValidationBehavior<TRequest, TResponse> :
+    IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
-    public class RequestValidationBehavior<TRequest, TResponse> :
-        IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+    private readonly IEnumerable<IValidator<TRequest>> _validators;
+
+    public RequestValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
     {
-        private readonly IEnumerable<IValidator<TRequest>> _validators;
+        _validators = validators;
+    }
 
-        public RequestValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
+    /// <summary>
+    /// Handle to validate request input and check errors
+    /// </summary>
+    /// <param name="request"> Request to validate</param>
+    /// <param name="next">Delegate response</param>
+    /// <param name="cancellationToken">MediatR Cancelation Token</param>
+    public Task<TResponse> Handle(
+        TRequest request,
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
+    {
+        var errors = _validators
+            .Select(v => v.Validate(request))
+            .SelectMany(result => result.Errors)
+            .Where(f => f is not null)
+            .ToList();
+
+        if (errors?.Any() == true)
         {
-            _validators = validators;
-        }
+            var errorBuilder = new StringBuilder();
 
-        /// <summary>
-        /// Handle to validate request input and check errors
-        /// </summary>
-        /// <param name="request"> Request to validate</param>
-        /// <param name="cancellationToken">MediatR Cancelation Token</param>
-        /// <param name="next">Delegate response</param>
-        public Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
-            RequestHandlerDelegate<TResponse> next)
-        {
-            var errors = _validators
-                .Select(v => v.Validate(request))
-                .SelectMany(result => result.Errors)
-                .Where(f => f != null)
-                .ToList();
-
-            if (errors?.Any() == true)
+            foreach (var error in errors)
             {
-                var errorBuilder = new StringBuilder();
-
-                foreach (var error in errors)
-                {
-                    errorBuilder.AppendLine(error.ErrorMessage);
-                }
-
-                // Throw exception with all errors
-                Raise.Error.Generic<InvalidRequestException>(
-                    BaseResources.MessagesResources.ErrorValidatorsTitle,
-                    errorBuilder.ToString());
+                errorBuilder.AppendLine(error.ErrorMessage);
             }
 
-            return next();
+            // Throw exception with all errors
+            Raise.Error.Generic<InvalidRequestException>(
+                BaseResources.MessagesResources.ErrorValidatorsTitle,
+                errorBuilder.ToString());
         }
+
+        return next();
     }
 }
