@@ -1,11 +1,9 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 
-namespace MGK.ServiceBase.DAL.SeedWork
+namespace MGK.ServiceBase.DAL.SeedWork;
+
+public interface ISqlConnectionFactory : IDisposable
 {
-    public interface ISqlConnectionFactory : IDisposable
-    {
-        IDbConnection GetOpenConnection(string database);
-        int GetTimeoutForQueries(string database);
-    }
+    IDbConnection GetOpenConnection(string database);
+    int GetTimeoutForQueries(string database);
 }

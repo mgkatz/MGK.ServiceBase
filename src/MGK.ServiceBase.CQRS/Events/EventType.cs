@@ -1,8 +1,7 @@
-﻿namespace MGK.ServiceBase.CQRS.Events
+﻿namespace MGK.ServiceBase.CQRS.Events;
+
+public enum EventType
 {
-	public enum EventType
-	{
-		Domain = 0,
-		External = 1
-	}
+	Domain = 0,
+	External = 1
 }

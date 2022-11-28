@@ -19,7 +19,7 @@ namespace ConfigurationResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class MessagesResources {
@@ -84,6 +84,15 @@ namespace ConfigurationResources {
         public static string ErrorDatabaseNameNotExist {
             get {
                 return ResourceManager.GetString("ErrorDatabaseNameNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The manager getting configuration sections could not retrieve the desired section: &apos;{0}&apos;..
+        /// </summary>
+        public static string ErrorOptions {
+            get {
+                return ResourceManager.GetString("ErrorOptions", resourceCulture);
             }
         }
         

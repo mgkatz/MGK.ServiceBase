@@ -126,6 +126,9 @@
   <data name="ErrorDatabaseNameNotExist" xml:space="preserve">
     <value>The provided database name '{0}' does not exist.</value>
   </data>
+  <data name="ErrorOptions" xml:space="preserve">
+    <value>The manager getting configuration sections could not retrieve the desired section: '{0}'.</value>
+  </data>
   <data name="ErrorRequestContextNull" xml:space="preserve">
     <value>The request context cannot be null.</value>
   </data>

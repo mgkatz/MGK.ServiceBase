@@ -1,16 +1,15 @@
 ﻿using MGK.ServiceBase.DAL.Infrastructure.Factories;
-using MGK.ServiceBase.DAL.SeedWork;
 using MGK.ServiceBase.Services.SeedWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace MGK.ServiceBase.DAL.Infrastructure.Registering.Service
+namespace MGK.ServiceBase.DAL.Infrastructure.Registering.Service;
+
+public class RegisterFactories : IServiceRegistration
 {
-    public class RegisterFactories : IServiceRegistration
+    public void RegisterServices(IServiceCollection services, IConfiguration configuration)
     {
-        public void RegisterServices(IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddScoped<ISqlConnectionFactory, SqlConnectionFactory>();
-        }
+        services.TryAddScoped<ISqlConnectionFactory, SqlConnectionFactory>();
     }
 }

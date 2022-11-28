@@ -1,28 +1,29 @@
-﻿using MGK.Extensions.Constants;
-using MGK.ServiceBase.DAL.Infrastructure.DataUnits;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
-using System;
+﻿// TODO: review the CSharpEntityTypeGenerator because in EF Core 7 the WriteCode method does not exist anymore and it seems that has been replaced with the TransformText method.
 
-namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding
-{
-	public class CustomEntityTypeGenerator : CSharpEntityTypeGenerator
-	{
-		public CustomEntityTypeGenerator(IAnnotationCodeGenerator annotationCodeGenerator, ICSharpHelper cSharpHelper)
-			: base(annotationCodeGenerator, cSharpHelper)
-		{
-		}
+//using MGK.Extensions.Constants;
+//using MGK.ServiceBase.DAL.Infrastructure.DataUnits;
+//using Microsoft.EntityFrameworkCore.Design;
+//using Microsoft.EntityFrameworkCore.Metadata;
+//using Microsoft.EntityFrameworkCore.Scaffolding.Internal;
+//using System;
 
-		public override string WriteCode(IEntityType entityType, string @namespace, bool useDataAnnotations)
-		{
-			var oldString = $"public partial class {entityType.Name}";
-			var newString = $"{oldString} : {typeof(DataUnit).Name}";
-			var baseCode = base
-				.WriteCode(entityType, @namespace, useDataAnnotations)
-				.Replace(oldString, newString, StringComparison.InvariantCultureIgnoreCase);
+//namespace MGK.ServiceBase.DAL.Infrastructure.Scaffolding;
 
-			return $"using {typeof(DataUnit).Namespace};{StringConstants.CRLF}{baseCode}";
-		}
-	}
-}
+//public class CustomEntityTypeGenerator : CSharpEntityTypeGenerator
+//{
+//	public CustomEntityTypeGenerator(IAnnotationCodeGenerator annotationCodeGenerator, ICSharpHelper cSharpHelper)
+//		: base(annotationCodeGenerator, cSharpHelper)
+//	{
+//	}
+
+//	public override string WriteCode(IEntityType entityType, string @namespace, bool useDataAnnotations)
+//	{
+//		var oldString = $"public partial class {entityType.Name}";
+//		var newString = $"{oldString} : {typeof(DataUnit).Name}";
+//		var baseCode = base
+//			.WriteCode(entityType, @namespace, useDataAnnotations)
+//			.Replace(oldString, newString, StringComparison.InvariantCultureIgnoreCase);
+
+//		return $"using {typeof(DataUnit).Namespace};{StringConstants.CRLF}{baseCode}";
+//	}
+//}

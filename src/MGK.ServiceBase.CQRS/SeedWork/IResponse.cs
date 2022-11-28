@@ -1,6 +1,5 @@
-﻿namespace MGK.ServiceBase.CQRS.SeedWork
+﻿namespace MGK.ServiceBase.CQRS.SeedWork;
+
+public interface IResponse
 {
-	public interface IResponse
-	{
-	}
 }
